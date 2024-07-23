@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day -9</title>
+  <style>
+    /* Basic styling for the body */
+    body {
+      background-color: #212121;
+      color: #fff;
+    }
+    /* Styling for the div with class 'change-background' */
+    .change-background {
+      width: 100px;
+      height: 100px;
+      background-color: #444;
+      margin: 10px;
+    }
+    /* Styling for the div with class 'remove-element' */
+    .remove-element {
+      margin: 10px;
+      padding: 10px;
+      background-color: #555;
+    }
+    /* Styling for elements with class 'event-element' */
+    .event-element {
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Initial text element -->
+  <div id="change-text">Initial Text</div>
+  <!-- Background change example -->
+  <div class="change-background">Background Div</div>
+  <!-- List of items -->
+  <ul id="list">
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+  </ul>
+  <!-- Element to be removed -->
+  <div class="remove-element">Remove Me</div>
+  <!-- Image whose attribute will be changed -->
+  <img id="change-attribute"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXYPNyFGrvP-YqkjoLXlj3no-xP5Cv6M8EDg&s"
+    alt="Initial Image">
+  <!-- Element to modify class -->
+  <div id="modify-class">Modify My Class</div>
+  <!-- Button for click event -->
+  <button id="click-event">Click Me</button>
+  <!-- Paragraph to update on button click -->
+  <p id="click-paragraph">Click the button to change this text.</p>
+  <!-- Element with mouseover event -->
+  <div id="mouseover-element" class="event-element">Mouse over me</div>
+  <script>
+    // Day 9: DOM Manipulation
+
+    console.log("Activity 1: Selecting and Manipulating Elements");
+
+    // Task 1: Select an HTML element by its ID and change its text content.
+    const editById = document.getElementById("change-text");
+    const updatedEditbyId = document.createElement('div');
+    updatedEditbyId.innerHTML = "Updated Text";
+    editById.replaceWith(updatedEditbyId);
+
+    // Task 2: Select an HTML element by its class and change its background color.
+    document.querySelector('.change-background').style.backgroundColor = '#ff5722';
+
+    console.log("Activity 2: Creating and Appending Elements");
+
+    // Task 3: Create a new div element with some text content and append it to the body.
+    const newDiv = document.createElement('div');
+    newDiv.appendChild(document.createTextNode('Appended Div'));
+    document.body.appendChild(newDiv);
+
+    // Task 4: Create a new li element and add it to an existing ul list.
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode('New List Item'));
+    document.getElementById('list').appendChild(li);
+
+    console.log("Activity 3: Removing Elements");
+
+    // Task 5: Select an HTML element and remove it from the DOM.
+    const removeElement = document.querySelector('.remove-element');
+    removeElement.remove();
+
+    // Task 6: Remove the last child of a specific HTML element.
+    const lastChild = document.querySelector("li:last-child");
+    lastChild.remove();
+
+    console.log("Activity 4: Modifying Attributes and Classes");
+
+    // Task 7: Select an HTML element and change one of its attributes (e.g., src of an img tag).
+    const changeAttribute = document.getElementById('change-attribute');
+    changeAttribute.setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUrfpnDr9pV-CSJYN37JBUSHIK9N4I2iBx_LzCBLkO-L6F8SiYnwIxcHYoctVEETcuLgs&usqp=CAU');
+
+    // Task 8: Add and remove a CSS class to/from an HTML element.
+    const modifyClassElement = document.getElementById('modify-class');
+    modifyClassElement.classList.add('new-class');
+    modifyClassElement.classList.remove('new-class');
+
+    console.log("Activity 5: Event Handling");
+
+    // Task 9: Add a click event listener to a button that changes the text content of a paragraph.
+    document.getElementById('click-event').addEventListener('click', function () {
+      document.getElementById('click-paragraph').textContent = 'Text has been changed!';
+    });
+
+    // Task 10: Add a mouseover event listener to an element that changes its border color.
+    document.getElementById('mouseover-element').addEventListener('mouseover', function () {
+      this.style.borderColor = '#ff5722';
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 10: Event Handling</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body style="background-color: #282828; color: aliceblue;">
+
+  <!-- Task 1: Click Event -->
+  <button id="changeTextButton">Change Text</button>
+  <p id="textParagraph">Original Text</p>
+
+  <!-- Task 2: Double Click Event -->
+  <img id="toggleImage" src="https://via.placeholder.com/150" alt="Placeholder Image"
+    style="display: block; margin: 20px auto;">
+
+  <!-- Task 3 & 4: Mouse Events -->
+  <div id="colorBox" style="width: 200px; height: 200px; background-color: #444; margin: 20px auto;"></div>
+
+  <!-- Task 5 & 6: Keyboard Events -->
+  <input type="text" id="keyboardInput" placeholder="Type something">
+  <p id="inputValue">Current Value: </p>
+
+  <!-- Task 7 & 8: Form Events -->
+  <form id="myForm">
+    <input type="text" name="name" placeholder="Enter your name">
+    <select id="mySelect">
+      <option value="">Select an option</option>
+      <option value="Option 1">Option 1</option>
+      <option value="Option 2">Option 2</option>
+    </select>
+    <p id="selectedValue">Selected Value: </p>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Task 9 & 10: Event Delegation -->
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <button id="addItemButton">Add Item</button>
+
+  <script>
+    // Day 10: Event Handling
+    console.log("Activity 1: Basic Event Handling")
+
+    // Task 1: Add a click event listener to a button that changes the text content of a paragraph.
+    document.getElementById('changeTextButton').addEventListener('click', function () {
+      document.getElementById('textParagraph').textContent = 'Text Changed!';
+    }, false);
+
+
+    // Task 2: Add a double - click event listener to an image that toggles its visibility.
+    document.getElementById('toggleImage').addEventListener('dblclick', function (e) {
+      let toggleImage = e.target;
+      toggleImage.remove();
+    }, false)
+    console.log("Activity 2: Mouse Events")
+
+    //Task 3: Add a mouseover event listener to an element that changes its background color.
+    document.getElementById('colorBox').addEventListener('mouseover', function (e) {
+      e.target.style.backgroundColor = "white";
+    }, false)
+    // Task 4: Add a mouseout event listener to an element that resets its background color.
+    document.getElementById('colorBox').addEventListener('mouseout', function (e) {
+      e.target.style.backgroundColor = "#444";
+    }, false)
+    console.log("Activity 3: Keyboard Events")
+
+    //Task 5: Add a keydown event listener to an input field that logs the key pressed to the console.
+    document.getElementById('keyboardInput').addEventListener('keydown', function (e) {
+      console.log(`Key pressed: ${event.key}`);
+    }, false)
+    // Task 6: Add a keyup event listener to an input field that displays the current value in a paragraph.
+    document.getElementById('keyboardInput').addEventListener('keyup', function (e) {
+      document.getElementById('inputValue').textContent = 'Current Value: ' + e.target.value;
+    }, false)
+
+    console.log("Activity 4: Form Events")
+    // Task 7: Add a submit event listener to a form that prevents the default submission and logs the form data to the console.
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      let formData = new FormData(e.target);
+      let data = {}
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+      console.log(data);
+    }, false);
+
+    // Task 8: Add a change event listener to a select dropdown that displays the selected value in a paragraph.
+    document.getElementById('mySelect').addEventListener('change', function (e) {
+      document.getElementById('selectedValue').textContent = 'Selected value: ' + e.target.value;
+    }, false);
+
+    console.log("Activity 5: Event Delegation")
+
+    //Task 9: Add a click event listener to a list that logs the text content of the clicked list item using event delegation.
+    const list = document.getElementById('myList');
+    list.addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        console.log(`Clicked Item : ${e.target.textContent}`);
+      }
+
+    }, false)
+
+    // Task 10: Add an event listener to a parent element that listens for events from dynamically added child elements
+    const parent = document.getElementById('addItemButton');
+    parent.addEventListener('click', function () {
+      const newElement = document.createElement('li');
+      newElement.textContent = 'Item 4';
+      list.appendChild(newElement);
+    }, false)
+  </script>
+</body>
+
+</html>
