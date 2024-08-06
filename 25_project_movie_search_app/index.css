@@ -1,0 +1,192 @@
+/* Global styles: reset margins, paddings, and set box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Navigation bar styling */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background: linear-gradient(90deg, #1a1a1a, #333333);
+  color: #e0e0e0;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+/* Logo styling */
+.logo h1 {
+  font-size: 35px;
+  font-family: "Abril Fatface", cursive;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease;
+}
+
+.logo h1:hover {
+  transform: scale(1.1);
+}
+
+/* Search bar styling */
+.searchBar {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.searchBar input {
+  width: 280px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 4px 0 0 4px;
+  background-color: #444444;
+  color: #e0e0e0;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.searchBar input::placeholder {
+  color: #b0b0b0;
+}
+
+.searchBar input:focus {
+  width: 320px;
+  background-color: #555555;
+}
+
+.searchBar button {
+  width: 80px;
+  background-color: #ff6600;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.searchBar button:hover {
+  background-color: #e65c00;
+  transform: scale(1.05);
+}
+
+/* Card section styling */
+.card {
+  margin-top: 144px;
+}
+
+/* Movie card styling */
+.movieCard {
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.movieCard h1 {
+  text-align: center;
+}
+
+.movieCard a {
+  background-color: #ff6600;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  margin-top: 22px;
+}
+
+.movieCard .rating {
+  text-align: center;
+  margin-top: 11px;
+}
+
+.movieCard p {
+  margin-top: 22px;
+}
+
+.movieCard span {
+  color: #e0e0e0;
+}
+
+/* Card text styling */
+.cardText {
+  margin-top: 22px;
+}
+
+.card h1 {
+  text-align: center;
+}
+
+/* Responsive design for different screen sizes */
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .searchBar {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .movieCard {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .movieCard {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .searchBar input {
+    width: 60%;
+  }
+
+  .searchBar button {
+    width: 60px;
+    font-size: 14px;
+  }
+
+  .movieCard img {
+    width: 90%;
+  }
+}
