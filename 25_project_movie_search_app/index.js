@@ -21,6 +21,7 @@ const getData = async (movie) => {
     // Check for errors and log movie rating
     if (jsonData.Error) {
       console.log(jsonData.Error);
+      document.querySelector(".card").innerHTML = "<h1>Movie Not Found</h1>";
     } else {
       console.log(jsonData.Ratings[0].Value);
 
@@ -36,12 +37,28 @@ const getData = async (movie) => {
               3
             )}</span></p>
             <a href="#" class="types">${jsonData.Genre}</a>
-            <p>Released: <span>${jsonData.Released}</span></p>
-            <p>Duration: <span>${jsonData.Runtime}</span></p>
-            <p>Plot: <span>${jsonData.Plot}</span></p>
+            <button class="moreDetailsBtn">More Details</button>
+            <div class="moreDetails">
+                <p>Released: <span>${jsonData.Released}</span></p>
+                <p>Duration: <span>${jsonData.Runtime}</span></p>
+                <p>Plot: <span>${jsonData.Plot}</span></p>
+            </div>
         </div>
       `;
       document.querySelector(".card").appendChild(div);
+
+      // Add event listener to the button to toggle more details
+      let moreDetailsBtn = div.querySelector(".moreDetailsBtn");
+      let moreDetails = div.querySelector(".moreDetails");
+      moreDetailsBtn.addEventListener("click", () => {
+        if (moreDetails.style.display === "none") {
+          moreDetails.style.display = "block";
+          moreDetailsBtn.textContent = "Show Less";
+        } else {
+          moreDetails.style.display = "none";
+          moreDetailsBtn.textContent = "More Details";
+        }
+      });
     }
   } catch (error) {
     // Handle errors by displaying a message
