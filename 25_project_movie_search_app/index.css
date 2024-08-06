@@ -1,4 +1,4 @@
-/* Global styles: reset margins, paddings, and set box-sizing */
+/* Global styles: reset margins and paddings */
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +29,6 @@ nav {
   transition: background 0.3s ease;
 }
 
-/* Logo styling */
 .logo h1 {
   font-size: 35px;
   font-family: "Abril Fatface", cursive;
@@ -41,11 +40,10 @@ nav {
   transform: scale(1.1);
 }
 
-/* Search bar styling */
 .searchBar {
   display: flex;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 30px;
   overflow: hidden;
   background-color: #333333;
 }
@@ -54,9 +52,9 @@ nav {
   width: 280px;
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 18px;
-  border-radius: 4px 0 0 4px;
+  border-radius: 30px 0 0 30px;
   background-color: #444444;
   color: #e0e0e0;
   transition: width 0.3s ease, background-color 0.3s ease;
@@ -72,14 +70,22 @@ nav {
 }
 
 .searchBar button {
-  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
   background-color: #ff6600;
   color: white;
   font-size: 16px;
   border: none;
+  border-radius: 0 30px 30px 0;
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.searchBar button i {
+  margin-left: 8px;
 }
 
 .searchBar button:hover {
@@ -87,7 +93,6 @@ nav {
   transform: scale(1.05);
 }
 
-/* Card section styling */
 .card {
   margin-top: 144px;
 }
@@ -97,12 +102,20 @@ nav {
   width: 1000px;
   margin: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 22px;
   padding: 20px;
   border-radius: 6px;
   background-color: #1e1e1e;
   color: #e0e0e0;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.movieCard img {
+  max-width: 100%;
+  border-radius: 6px;
 }
 
 .movieCard h1 {
@@ -136,16 +149,36 @@ nav {
   color: #e0e0e0;
 }
 
-/* Card text styling */
 .cardText {
-  margin-top: 22px;
+  text-align: center;
+}
+
+.movieCard .moreDetailsBtn {
+  background-color: #ff6600;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.movieCard .moreDetailsBtn:hover {
+  background-color: #e65c00;
+  transform: scale(1.05);
+}
+
+.movieCard .moreDetails {
+  display: none;
+  margin-top: 20px;
 }
 
 .card h1 {
   text-align: center;
 }
 
-/* Responsive design for different screen sizes */
 @media screen and (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -182,7 +215,7 @@ nav {
   }
 
   .searchBar button {
-    width: 60px;
+    width: 80px;
     font-size: 14px;
   }
 
