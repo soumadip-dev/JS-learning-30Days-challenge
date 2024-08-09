@@ -17,7 +17,7 @@ Each day's exercise is organized in its respective folder, containing code, comm
 
 ## Progress
 
-- **Day 1**: Variables and Data Types
+- **Day 1**: [Variables and Data Types](https://github.com/soumadip-dev/js-learning-30Days-challenge/blob/main/01_variables_and_data_types.js)
 - **Day 2**: Operators
 - **Day 3**: Control Structures
 - **Day 4**: Loops
