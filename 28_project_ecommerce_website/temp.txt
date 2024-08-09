@@ -1,0 +1,59 @@
+
+### Activity 1: Setting Up the Project
+
+**Task 1: Initialize a new project directory and set up the basic HTML structure for the e-commerce website.**
+- Create a new directory for your project.
+- Inside this directory, create an `index.html` file.
+- Set up a basic HTML structure, including:
+  - `<!DOCTYPE html>`
+  - `<html>`, `<head>`, and `<body>` tags.
+  - Include a title in the `<head>` section like `E-Commerce Website`.
+  - Create a placeholder for the product listing grid and a shopping cart section.
+
+**Task 2: Add a basic CSS file to style the e-commerce website, including a product listing grid and a shopping cart section.**
+- In your project directory, create a `styles.css` file.
+- Link this CSS file in your `index.html` within the `<head>` section.
+- Define basic styles for the product grid and shopping cart section in the `styles.css` file.
+
+### Activity 2: Product Listing
+
+**Task 3: Create a JSON file or an array of product objects with details like name, price, description, and image URL.**
+- You can create a `products.json` file or a JavaScript array in a separate `products.js` file.
+- Structure each product object to include the following:
+  - `name`, `price`, `description`, `imageUrl`.
+  
+**Task 4: Write a script to dynamically generate the product listing from the product data and display it on the web page. Style the product cards using CSS.**
+- In your `index.html`, link a JavaScript file (e.g., `script.js`).
+- Use JavaScript to fetch the product data from the JSON file or array.
+- Create a function that loops through the product data and generates HTML for each product.
+- Style the product cards using your `styles.css` file.
+
+### Activity 3: Shopping Cart
+
+**Task 5: Add an "Add to Cart" button to each product card. Write a function to handle adding products to the shopping cart.**
+- In your dynamically generated product cards, include an "Add to Cart" button.
+- Create a JavaScript function that adds the selected product to the shopping cart when the button is clicked.
+
+**Task 6: Create a shopping cart section that displays the products added to the cart, including the name, price, and quantity. Update the cart display whenever a product is added.**
+- In your `index.html`, add a section dedicated to displaying the shopping cart.
+- Create a JavaScript function that updates the cart section whenever a new product is added.
+
+### Activity 4: Cart Management
+
+**Task 7: Add functionality to update the quantity of products in the cart. Write a function to handle increasing and decreasing the quantity of items.**
+- In the cart display, include options to increase or decrease the quantity of each product.
+- Write JavaScript functions to handle these actions and update the cart accordingly.
+
+**Task 8: Add a "Remove" button to each item in the cart. Write a function to handle removing products from the cart and updating the display.**
+- Add a "Remove" button next to each item in the cart.
+- Create a JavaScript function that removes the selected item from the cart and updates the display.
+
+### Activity 5: Checkout Process
+
+**Task 9: Create a checkout form that collects user information (e.g., name, address, payment details). Style the form using CSS.**
+- In your `index.html`, create a form to collect user details like name, address, and payment information.
+- Style the form using your `styles.css` file.
+
+**Task 10: Write a function to handle form submission, simulating the checkout process. Display a confirmation message with the order details.**
+- Create a JavaScript function that handles the form submission.
+- Display a confirmation message on the page with the order details once the form is submitted.
