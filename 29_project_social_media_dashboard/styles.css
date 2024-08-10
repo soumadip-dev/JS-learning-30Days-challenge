@@ -1,0 +1,174 @@
+/* Import Font Awesome */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+body {
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  background-color: #e9ebee;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #3b5998;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+
+#post-form {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+#post-form input[type="text"],
+#post-form input[type="file"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #f5f6f7;
+  transition: background-color 0.3s ease;
+}
+
+#post-form input[type="text"]:focus,
+#post-form input[type="file"]:focus {
+  background-color: #fff;
+  outline: none;
+}
+
+#post-form button {
+  padding: 10px 20px;
+  background-color: #4267b2;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#post-form button:hover {
+  background-color: #365899;
+}
+
+#feed {
+  margin-top: 20px;
+}
+
+#login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#login-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #f5f6f7;
+  transition: background-color 0.3s ease;
+}
+
+#login-form input:focus {
+  background-color: #fff;
+  outline: none;
+}
+
+#login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4267b2;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-form button:hover {
+  background-color: #365899;
+}
+
+.post {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+.post-footer button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #4267b2;
+  display: flex;
+  align-items: center;
+}
+
+.post-footer button i {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.post-footer button:hover {
+  color: #365899;
+}
