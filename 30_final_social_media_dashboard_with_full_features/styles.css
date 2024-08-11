@@ -1,0 +1,245 @@
+/* General Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+#app {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4267b2;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Form Container Styles */
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+input,
+textarea {
+  width: calc(100% - 22px);
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #4267b2;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #365899;
+}
+
+/* Dashboard and Profile Styles */
+aside {
+  width: 25%;
+  float: left;
+  padding: 20px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  width: 73%;
+  float: right;
+  padding: 20px;
+}
+
+#posts {
+  margin-top: 20px;
+}
+
+.post {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post .username {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.post .content {
+  margin-bottom: 10px;
+}
+
+.post .actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post .actions button {
+  background: #4267b2;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.post .actions button:hover {
+  background: #365899;
+}
+
+textarea {
+  height: 150px;
+}
+
+/* Profile Page */
+/* Profile Container */
+.profile-container {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Profile Picture Container */
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  object-fit: cover;
+}
+
+.profile-pic-input {
+  margin-top: 15px;
+}
+
+/* Profile Form Inputs */
+.profile-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.back-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+/* Post Image Styling */
+.post-image {
+  max-width: 100%;
+  max-height: 400px; /* Adjust as needed */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  aside {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  main {
+    width: 100%;
+    float: none;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+}
+
+/* Profile Section in Dashboard */
+.profile-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-dashboard-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  object-fit: cover;
+}

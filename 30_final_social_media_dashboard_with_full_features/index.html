@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header>
+      <div class="logo">SocialApp</div>
+      <nav>
+        <a href="#" id="showLogin">Login</a>
+        <a href="#" id="showRegister">Register</a>
+      </nav>
+    </header>
+
+    <!-- Registration Form -->
+    <div id="registration" class="form-container">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <input type="text" id="registerUsername" placeholder="Username" required>
+        <input type="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" id="registerPassword" placeholder="Password" required>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login" class="form-container hidden">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+      <aside>
+        <h2>Notifications</h2>
+        <ul id="notifications"></ul>
+        <button id="viewProfile">View Profile</button>
+      </aside>
+      <main>
+        <!-- Profile Photo Section -->
+        <div id="profileSection" class="profile-section">
+          <img id="profileDashboardPic" src="default-profile.png" alt="Profile Picture" class="profile-dashboard-pic">
+        </div>
+        <form id="postForm">
+          <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
+          <input type="file" id="postImage" accept="image/*">
+          <button type="submit">Post</button>
+        </form>
+        <div id="posts"></div>
+      </main>
+    </div>
+
+    <!-- User Profile -->
+    <div id="profile" class="hidden form-container profile-container">
+      <h2>User Profile</h2>
+      <form id="profileForm">
+        <div class="profile-pic-container">
+          <img id="profilePicture" src="default-profile.png" alt="Profile Picture" class="profile-picture">
+          <input type="file" id="profilePicInput" accept="image/*" class="profile-pic-input">
+        </div>
+        <input type="text" id="profileUsername" placeholder="Username" required class="profile-input">
+        <input type="email" id="profileEmail" placeholder="Email" required class="profile-input">
+        <button type="submit" class="submit-button">Update Profile</button>
+      </form>
+      <button id="backToDashboard" class="back-button">Back to Dashboard</button>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
