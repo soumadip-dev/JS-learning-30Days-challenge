@@ -2,6 +2,8 @@
 
 Welcome to my 30-day JavaScript challenge! This repository contains daily exercises designed to practice and enhance my JavaScript skills. Follow my progress to explore various JS concepts and projects.
 
+![JavaScript Learning](Images/js-learning.png)
+
 ## About
 
 I am learning and practicing JavaScript through the [Chai aur Code YouTube channel](https://www.youtube.com/@chaiaurcode) and the [Chai aur Code platform](https://chaicode.com/). This challenge spans 30 days and covers fundamental to advanced JavaScript topics.
