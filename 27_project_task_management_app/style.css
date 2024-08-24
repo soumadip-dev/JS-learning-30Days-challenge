@@ -1,218 +1,153 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
+/* Reset default margins and paddings, and set box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base styles for the body */
 body {
   font-family: "Poppins", sans-serif;
   background-color: #1a1a1a;
-  color: #e0e0e0;
-}
-
-header {
-  background-color: #292929;
-  color: #e0e0e0;
-  text-align: center;
-  padding: 30px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-  border-bottom: 1px solid #444;
-}
-
-header h1 {
-  font-size: 40px;
-  letter-spacing: 1px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 0 20px;
+  color: #ffffff;
   display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
 }
 
-.add-task,
-.task-list {
-  flex: 1;
-  min-width: 300px;
-}
-
-.add-task {
-  background: linear-gradient(145deg, #2c2c2c, #1e1e1e);
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-  padding: 35px;
-  margin-bottom: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.add-task:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
-}
-
-.add-task h2 {
-  margin-bottom: 25px;
-  font-size: 30px;
-  color: #f5f5f5;
-}
-
-.form-group {
-  margin-bottom: 25px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 7px;
-  font-weight: 600;
-  color: #e0e0e0;
-}
-
-.form-group input,
-.form-group textarea {
+/* Container styling to center and set width */
+.container {
+  max-width: 800px;
   width: 100%;
-  padding: 12px;
-  border: 1px solid #333;
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: #2d2d2d;
-  color: #e0e0e0;
-  transition: border-color 0.3s ease;
+  margin: 0 auto;
 }
 
-.input:focus,
-textarea:focus {
+/* Styling for the main heading */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Card wrapper for layout of the cards */
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Card styling */
+.card {
+  background-color: #1f1f1f;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Flexbox column layout for combined card */
+.combined-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Flexbox layout for the input group */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Styling for the task input field */
+#taskInput {
+  flex-grow: 1;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* Placeholder text styling */
+#taskInput::placeholder {
+  color: #999;
+}
+
+/* Input focus styling */
+#taskInput:focus {
   border-color: #ff5722;
   outline: none;
 }
 
-.add-task-btn {
-  width: 100%;
-  padding: 16px;
-  border: none;
+/* Button styling */
+#addTask {
+  padding: 10px 20px;
   background-color: #ff5722;
-  color: #121212;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.add-task-btn:hover {
-  background-color: #e64a19;
-  transform: scale(1.05);
-}
-
-.task-list {
-  background: linear-gradient(145deg, #2c2c2c, #1e1e1e);
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-  padding: 35px;
-}
-
-.task-list h2 {
-  margin-bottom: 25px;
-  font-size: 30px;
-  color: #f5f5f5;
-}
-
-.task-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #333;
-  padding: 20px 0;
-}
-
-.task-info {
-  flex: 1;
-}
-
-.task-name {
-  font-size: 24px;
-  font-weight: 600;
-  color: #f5f5f5;
-}
-
-.task-desc {
-  margin: 8px 0;
-  color: #b0b0b0;
-  font-size: 16px;
-}
-
-.task-date {
-  font-size: 14px;
-  color: #999;
-}
-
-.task-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.edit-btn,
-.delete-btn {
   border: none;
-  padding: 12px 18px;
-  border-radius: 8px;
+  border-radius: 5px;
+  color: #121212;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.edit-btn {
-  background-color: #4caf50;
-  color: #fff;
+/* Button hover effect */
+#addTask:hover {
+  background-color: #e64a19;
 }
 
-.edit-btn:hover {
-  background-color: #388e3c;
-  transform: scale(1.05);
+/* Task list section heading styling */
+.task-list-section h2 {
+  margin-bottom: 20px;
 }
 
-.delete-btn {
-  background-color: #f44336;
-  color: #fff;
+/* Unordered list styling */
+ul#taskList {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-.delete-btn:hover {
-  background-color: #c62828;
-  transform: scale(1.05);
+/* Task list item styling */
+ul#taskList li {
+  padding: 10px;
+  background-color: #333;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  transition: background-color 0.3s;
 }
 
+/* Task list item hover effect */
+ul#taskList li:hover {
+  background-color: #444;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .container {
+  .card-wrapper {
     flex-direction: column;
-    gap: 20px;
   }
 
-  header h1 {
-    font-size: 32px;
+  .card {
+    width: 100%;
   }
+}
 
-  .add-task,
-  .task-list {
-    padding: 20px;
-  }
-
-  .task-name {
-    font-size: 20px;
-  }
-
-  .task-desc,
-  .task-date {
+@media (max-width: 480px) {
+  #taskInput {
     font-size: 14px;
   }
 
-  .edit-btn,
-  .delete-btn {
-    padding: 10px 14px;
+  #addTask {
     font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .card {
+    padding: 15px;
   }
 }
