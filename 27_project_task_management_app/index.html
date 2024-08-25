@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to the external CSS file for styling -->
     <link rel="stylesheet" href="./style.css">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Link to the favicon for the tab icon -->
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Task Management App</title>
@@ -22,6 +24,12 @@
                     <input type="text" id="taskInput" placeholder="Write your next task here...">
                     <!-- Button to add the entered task -->
                     <button id="addTask">Add Task</button>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filterButton" data-filter="all">All</button>
+                    <button class="filterButton" data-filter="completed">Completed</button>
+                    <button class="filterButton" data-filter="pending">Pending</button>
                 </div>
                 <!-- Task List Section -->
                 <div class="task-list-section">
