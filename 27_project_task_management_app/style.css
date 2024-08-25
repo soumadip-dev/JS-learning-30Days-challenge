@@ -43,8 +43,8 @@ h1 {
   background-color: #1f1f1f;
   width: 100%;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Flexbox column layout for combined card */
@@ -92,12 +92,38 @@ h1 {
   color: #121212;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 /* Button hover effect */
 #addTask:hover {
   background-color: #e64a19;
+  transform: scale(1.05);
+}
+
+/* Styling for the filter buttons */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Filter Button Styling */
+.filterButton {
+  padding: 10px 20px;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Filter Button hover effect */
+.filterButton:hover {
+  background-color: #444;
+  transform: scale(1.05);
 }
 
 /* Task list section heading styling */
@@ -113,10 +139,13 @@ ul#taskList {
 
 /* Task list item styling */
 ul#taskList li {
-  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
   background-color: #333;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   color: #ffffff;
   transition: background-color 0.3s;
 }
@@ -124,6 +153,76 @@ ul#taskList li {
 /* Task list item hover effect */
 ul#taskList li:hover {
   background-color: #444;
+}
+
+/* Styling for the task content wrapper */
+.task-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Task text element styling */
+.task-content span {
+  flex-grow: 1;
+  margin-right: 15px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Button styling */
+.completeBtn,
+.editBtn,
+.deleteBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px; /* Adjust font size to suit text */
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-transform: uppercase; /* Optional: make text uppercase */
+}
+
+/* Complete button specific styling */
+.completeBtn {
+  color: #4caf50; /* Green */
+}
+
+/* Edit button specific styling */
+.editBtn {
+  color: #ffeb3b; /* Yellow */
+}
+
+/* Delete button specific styling */
+.deleteBtn {
+  color: #f44336; /* Red */
+}
+
+/* Hover effects for the buttons */
+.completeBtn:hover {
+  background-color: #45a049;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.editBtn:hover {
+  background-color: #fdd835;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+.deleteBtn:hover {
+  background-color: #e53935;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+.completed {
+  text-decoration: line-through;
 }
 
 /* Responsive Design */
