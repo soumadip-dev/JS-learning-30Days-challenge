@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
-/* Reset default margins and paddings, and set box-sizing */
+/* Reset default margins, paddings, and set box-sizing */
 * {
   margin: 0;
   padding: 0;
@@ -180,12 +180,12 @@ ul#taskList li:hover {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 14px; /* Adjust font size to suit text */
+  font-size: 14px;
   color: #ffffff;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
   padding: 8px 12px;
   border-radius: 5px;
-  text-transform: uppercase; /* Optional: make text uppercase */
+  text-transform: uppercase;
 }
 
 /* Complete button specific styling */
@@ -221,6 +221,8 @@ ul#taskList li:hover {
   color: #ffffff;
   transform: scale(1.05);
 }
+
+/* Task completed styling */
 .completed {
   text-decoration: line-through;
 }
