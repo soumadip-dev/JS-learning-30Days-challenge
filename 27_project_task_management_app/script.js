@@ -7,17 +7,19 @@ function loadTasks() {
 }
 
 function refreshTasks(tasks) {
+  // Update tasks in localStorage
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function addTaskToLocalStorage(task) {
-  // Add a new task to localStorage
+  // Add a new task to the existing task list in localStorage
   const taskData = loadTasks();
   taskData.tasklist.push({ ...task });
-  localStorage.setItem("tasks", JSON.stringify(taskData));
+  refreshTasks(taskData);
 }
 
 function appendTaskToHtml(task) {
+  // Create and append a task element to the HTML list
   const taskListElement = document.getElementById("taskList");
   const taskItem = document.createElement("li");
 
@@ -34,12 +36,12 @@ function appendTaskToHtml(task) {
   const completeBtn = document.createElement("button");
   completeBtn.classList.add("completeBtn");
   completeBtn.textContent = task.isComplete ? "Reset" : "Completed";
-
   completeBtn.addEventListener("click", toggleTask);
 
   const editBtn = document.createElement("button");
   editBtn.classList.add("editBtn");
   editBtn.textContent = "Edit";
+  editBtn.addEventListener("click", editTask);
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("deleteBtn");
@@ -56,32 +58,26 @@ function appendTaskToHtml(task) {
 }
 
 function executeFilterAction(event) {
+  // Filter and display tasks based on the selected filter
   const taskListElement = document.getElementById("taskList");
   const element = event.target;
   const value = element.getAttribute("data-filter");
   taskListElement.innerHTML = "";
   const tasks = loadTasks();
 
-  if (value === "all") {
-    tasks.tasklist.forEach((task) => {
+  tasks.tasklist.forEach((task) => {
+    if (
+      value === "all" ||
+      (value === "pending" && !task.isComplete) ||
+      (value === "completed" && task.isComplete)
+    ) {
       appendTaskToHtml(task);
-    });
-  } else if (value === "pending") {
-    tasks.tasklist.forEach((task) => {
-      if (task.isComplete !== true) {
-        appendTaskToHtml(task);
-      }
-    });
-  } else {
-    tasks.tasklist.forEach((task) => {
-      if (task.isComplete === true) {
-        appendTaskToHtml(task);
-      }
-    });
-  }
+    }
+  });
 }
 
 function toggleTask(event) {
+  // Toggle the completion status of a task
   const taskItem = event.target.parentElement.parentElement;
   const taskId = taskItem.getAttribute("data-id");
   const tasks = loadTasks();
@@ -106,6 +102,7 @@ function toggleTask(event) {
 }
 
 function resetHtmlTasks(tasks) {
+  // Reset the HTML task list and re-render all tasks
   const taskList = document.getElementById("taskList");
   taskList.innerHTML = "";
   tasks.tasklist.forEach((task) => {
@@ -113,7 +110,23 @@ function resetHtmlTasks(tasks) {
   });
 }
 
+function editTask(event) {
+  // Edit an existing task and update the task list
+  const taskItem = event.target.parentElement.parentElement;
+  const taskId = taskItem.getAttribute("data-id");
+  let tasks = loadTasks();
+  const response = prompt("What is the new value you want to set?");
+  tasks.tasklist.forEach((task) => {
+    if (task.id == taskId) {
+      task.task = response;
+    }
+  });
+  refreshTasks(tasks);
+  resetHtmlTasks(tasks);
+}
+
 function deleteTask(event) {
+  // Delete a task from the task list
   const taskItem = event.target.parentElement.parentElement;
   const taskId = taskItem.getAttribute("data-id");
   let tasks = loadTasks();
@@ -122,45 +135,50 @@ function deleteTask(event) {
   resetHtmlTasks(tasks);
 }
 
+function addNewTask() {
+  // Add a new task to the task list and display it
+  const taskInputElement = document.getElementById("taskInput");
+  const taskText = taskInputElement.value.trim();
+  if (taskText === "") {
+    alert("Please write something for the task");
+  } else {
+    const taskData = loadTasks();
+    const id = taskData.tasklist.length;
+    const task = { task: taskText, isComplete: false, id };
+    addTaskToLocalStorage(task);
+    appendTaskToHtml(task);
+    taskInputElement.value = "";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize DOM elements
+  // Initialize the application after the DOM is fully loaded
   const taskInputElement = document.getElementById("taskInput");
   const addButtonElement = document.getElementById("addTask");
 
-  let taskData = loadTasks();
-
-  const taskListElement = document.getElementById("taskList");
-
   const filterBtn = document.getElementsByClassName("filterButton");
-
   for (const btn of filterBtn) {
     btn.addEventListener("click", executeFilterAction);
   }
 
-  // Add task when button is clicked
-  addButtonElement.addEventListener("click", () => {
-    const taskText = taskInputElement.value.trim();
-    if (taskText === "") {
-      alert("Please write something for the task");
-    } else {
-      taskData = loadTasks();
-      const id = taskData.tasklist.length;
-      const task = { task: taskText, isComplete: false, id };
-      addTaskToLocalStorage(task, id);
-      appendTaskToHtml(task, id);
-      taskInputElement.value = "";
-    }
-  });
+  // Add task when the add button is clicked
+  addButtonElement.addEventListener("click", addNewTask);
 
-  // Clean up input text when it changes
+  // Trim input text when it changes
   taskInputElement.addEventListener("change", (event) => {
-    const taskText = event.target.value;
-    event.target.value = taskText.trim();
+    event.target.value = event.target.value.trim();
   });
 
   // Load and display existing tasks from localStorage
   const tasks = loadTasks();
   tasks.tasklist.forEach((task) => {
     appendTaskToHtml(task);
+  });
+
+  // Add task when Enter key is pressed
+  document.addEventListener("keypress", (event) => {
+    if (event.code == "Enter") {
+      addNewTask();
+    }
   });
 });
