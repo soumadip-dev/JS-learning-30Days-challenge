@@ -44,5 +44,3 @@ Each exercise is organized in its respective folder with code, comments, and any
 - **Day 28**: [Project 5 - E-commerce Website](https://github.com/soumadip-dev/js-learning-30Days-challenge/tree/main/28_project_ecommerce_website)
 - **Day 29**: [Project 6 - Social Media Dashboard](https://github.com/soumadip-dev/js-learning-30Days-challenge/tree/main/29_project_social_media_dashboard)
 - **Day 30**: [Final - Social Media Dashboard with Full Features](https://github.com/soumadip-dev/js-learning-30Days-challenge/tree/main/30_final_social_media_dashboard_with_full_features)
-
-Feel free to explore and provide feedback!
