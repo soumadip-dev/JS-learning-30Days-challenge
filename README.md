@@ -1,6 +1,6 @@
 # JS Learning 30 Days Challenge
 
-Welcome to my 30-day JavaScript challenge! This repository contains daily exercises designed to practice and enhance my JavaScript skills. Follow my progress to explore various JS concepts and projects.
+Welcome to my 30-day JavaScript challenge!  This repository contains daily exercises designed to practice and enhance my JavaScript skills. Follow my progress to explore various JS concepts and projects.
 
 ![JavaScript Learning](Images/js-learning.png)
 
